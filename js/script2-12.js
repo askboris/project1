@@ -13,7 +13,7 @@ str.length - и получить её длину)
 
 const numberOfFilms = +prompt('Сколько фильмов вы уже смотрели?', '');
 
-let   personalMovieDB = {
+const   personalMovieDB = {
         count: numberOfFilms,
         movies: {},
         actors: {},
@@ -21,29 +21,66 @@ let   personalMovieDB = {
         privat: false
 };
 
+/* First type
+for (let i = 0; i < 2; i++) {
+    const   a = prompt('Один из последних просмотренных фильмов?', ''),
+            b = prompt('На сколько оцените его? От 1 до 10.');
+
+    if ( a != null &&  b != null && a != '' && b != '' && a.length < 50) {
+        personalMovieDB.movies[a] = b;
+        console.log('Done!');
+    } else {
+        console.log('Error');
+        i--;
+    }
+
+    
+}*/
+
+//Second type
+/*let i = 1;
+
+while (i <= 2) {
+    const   a = prompt('Один из последних просмотренных фильмов?', ''),
+            b = prompt('На сколько оцените его? От 1 до 10.');
+
+    if ( a != null &&  b != null && a != '' && b != '' && a.length < 50) {
+        personalMovieDB.movies[a] = b;
+        i++;
+        console.log('Done!');
+    } else {
+        console.log('Error');
+    }
+}*/
+
+
+//Third type
+
 let i = 1;
 
-while (i < 4) {
-    let str = prompt('Один из последних просмотренных фильмов?', '');
-    if ( str === '') {
-        alert('Вы не ввели название фильма. Попробуйте еще раз');
-    } else if ( str.length > 50 ) {
-        alert('Слишком длинное название. Количество знаков ограничено - максимум 50.');
-    } else {
-        let mark = +prompt('На сколько оцените его? От 1 до 10.');
-        personalMovieDB.movies[str] = mark;
+do {
+    const   a = prompt('Один из последних просмотренных фильмов?', ''),
+            b = prompt('На сколько оцените его? От 1 до 10.');
+
+    if ( a != null &&  b != null && a != '' && b != '' && a.length < 50) {
+        personalMovieDB.movies[a] = b;
         i++;
+        console.log('Done!');
+    } else {
+        console.log('Error');
     }
-}
+}while ( i <= 2 );
+
+
 
 console.log(personalMovieDB);
 console.log(`Вы смотрели ${personalMovieDB.count} фильмов. Статус:`);
 
 if ( personalMovieDB.count < 10 ) { 
     console.log('Просмотрено довольно мало фильмов.');
-} else if ( personalMovieDB.count >= 10 && personalMovieDB.count <= 30 ) {
+} else if ( personalMovieDB.count >= 10 && personalMovieDB.count < 30 ) {
     console.log('Вы классический зритель.');
-} else if ( personalMovieDB.count > 30 ) {
+} else if ( personalMovieDB.count >= 30 ) {
     console.log('Вы киноман!');
 } else {
     console.log('Произошла ошибка');
