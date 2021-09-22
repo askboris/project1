@@ -21,7 +21,7 @@ const   personalMovieDB = {
         privat: false
 };
 
-/* First type
+//First type
 for (let i = 0; i < 2; i++) {
     const   a = prompt('Один из последних просмотренных фильмов?', ''),
             b = prompt('На сколько оцените его? От 1 до 10.');
@@ -35,7 +35,7 @@ for (let i = 0; i < 2; i++) {
     }
 
     
-}*/
+}
 
 //Second type
 /*let i = 1;
@@ -55,7 +55,7 @@ while (i <= 2) {
 
 
 //Third type
-
+/*
 let i = 1;
 
 do {
@@ -70,7 +70,7 @@ do {
         console.log('Error');
     }
 }while ( i <= 2 );
-
+*/
 
 
 console.log(personalMovieDB);
