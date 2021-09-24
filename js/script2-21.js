@@ -3,10 +3,12 @@
 перед вами стоит задача переписать его так, чтобы все функции стали методами объекта personalMovieDB
 Такое случается в реальных продуктах при смене технологий или подхода к архитектуре программы
 
-2) Создать метод toggleVisibleMyDB, который при вызове будет проверять свойство privat. Если оно false - он
+2) Создать метод toggleVisibleMyDB, который при вызове будет проверять свойство privat. 
+Если оно false - он
 переключает его в true, если true - переключает в false. Протестировать вместе с showMyDB.
 
-3) В методе writeYourGenres запретить пользователю нажать кнопку "отмена" или оставлять пустую строку. 
+3) В методе writeYourGenres запретить пользователю нажать кнопку "отмена" 
+или оставлять пустую строку. 
 Если он это сделал - возвращать его к этому же вопросу. После того, как все жанры введены - 
 при помощи метода forEach вывести в консоль сообщения в таком виде:
 "Любимый жанр #(номер по порядку, начиная с 1) - это (название из массива)"*/
@@ -22,7 +24,8 @@ const personalMovieDB = {
     start: function () {
         personalMovieDB.count = +prompt('Сколько фильмов вы уже смотрели?', '');
 
-        while ( personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
+        while ( personalMovieDB.count == '' || personalMovieDB.count == null || 
+        isNaN(personalMovieDB.count)) {
             personalMovieDB.count = +prompt('Сколько фильмов вы уже смотрели?', '');
         }
     },
@@ -86,16 +89,16 @@ const personalMovieDB = {
             // } 
         }
 
-        personalMovieDB.genres.forEach(function(genre, i) {
+        personalMovieDB.genres.forEach( (genre, i) => {
             console.log(`Любимый жанр ${i + 1} - это ${genre}`);
         });
     }
 };
 
-
+/*
 personalMovieDB.start();
 personalMovieDB.rememberMyFilms();
 personalMovieDB.detectPersonalLevel();
 personalMovieDB.toggleVisibleMyDB();
 personalMovieDB.writeYourGenres();
-personalMovieDB.showMyDB();
+personalMovieDB.showMyDB();*/
